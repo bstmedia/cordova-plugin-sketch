@@ -60,7 +60,7 @@ public class TouchDrawActivity extends Activity {
     private int a, r, g, b; //Decoded ARGB color values for the background and erasing
 
     // Labels and values for stroke colour and width selection buttons
-    private static final String[] STROKE_COLOUR_LABELS = {"RED", "BLUE", "GREEN", "BLACK"};
+    private static final String[] STROKE_COLOUR_LABELS = {"ROT", "BLAU", "GRÜN", "SCHWARZ"};
     private static final int[] STROKE_COLOUR_VALUES = {Color.RED, Color.BLUE, Color.GREEN, Color.BLACK};
     private static final String[] STROKE_WIDTH_LABELS = {"0.5x", "1x", "2x", "8x"};
     private static final Integer[] STROKE_WIDTH_VALUES = {2, 4, 8, 32};
@@ -145,7 +145,7 @@ public class TouchDrawActivity extends Activity {
         LinearLayout buttonBar = new LinearLayout(this);
 
         Button doneButton = new Button(this);
-        doneButton.setText("Done");
+        doneButton.setText("Speichern");
         doneButton.setBackgroundColor(Color.GREEN);
         doneButton.setLayoutParams(new LinearLayout.LayoutParams(
                 0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 0.30));
@@ -157,7 +157,7 @@ public class TouchDrawActivity extends Activity {
         });
 
         Button eraseButton = new Button(this);
-        eraseButton.setText("Erase");
+        eraseButton.setText("Löschen");
         eraseButton.setBackgroundColor(Color.GRAY);
         eraseButton.setLayoutParams(new LinearLayout.LayoutParams(
                 0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 0.30));
@@ -169,7 +169,7 @@ public class TouchDrawActivity extends Activity {
         });
 
         Button cancelButton = new Button(this);
-        cancelButton.setText("Cancel");
+        cancelButton.setText("Abbrechen");
         cancelButton.setBackgroundColor(Color.RED);
         cancelButton.setLayoutParams(new LinearLayout.LayoutParams(
                 0, ViewGroup.LayoutParams.MATCH_PARENT, (float) 0.30));
@@ -198,7 +198,7 @@ public class TouchDrawActivity extends Activity {
     }
 
     public Spinner createColourSpinner() {
-        final String strokeColourLabelPrefix = "COLOUR: ";
+        final String strokeColourLabelPrefix = "FARBE: ";
         Spinner spinner = new Spinner(this);
 
         ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
@@ -207,7 +207,7 @@ public class TouchDrawActivity extends Activity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView v = (TextView) super.getView(position, convertView, parent);
 
-                v.setText(strokeColourLabelPrefix + "BLUE");
+                v.setText(strokeColourLabelPrefix + "BLAU");
                 return v;
             }
 
@@ -247,7 +247,7 @@ public class TouchDrawActivity extends Activity {
     }
 
     public Spinner createWidthSpinner() {
-        final String strokeWidthLabelPrefix = "WIDTH: ";
+        final String strokeWidthLabelPrefix = "STIFT: ";
         Spinner spinner = new Spinner(this);
 
         final ArrayAdapter<CharSequence> adapter = new ArrayAdapter<CharSequence>(this,
